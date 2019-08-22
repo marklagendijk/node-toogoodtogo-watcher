@@ -1,0 +1,23 @@
+{
+  "name": "node-toogoodtogo-watcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "MIR",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marklagendijk/node-toogoodtogo-watcher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marklagendijk/node-toogoodtogo-watcher/issues"
+  },
+  "homepage": "https://github.com/marklagendijk/node-toogoodtogo-watcher#readme",
+  "dependencies": {
+    "node-notifier": "^5.4.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "rxjs": "^6.5.2"
+  }
+}
