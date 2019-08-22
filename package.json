@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/marklagendijk/node-toogoodtogo-watcher#readme",
   "dependencies": {
+    "conf": "^5.0.0",
     "node-notifier": "^5.4.3",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
