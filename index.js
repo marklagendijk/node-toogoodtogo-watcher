@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { flatMap } = require('rxjs/operators');
 const { initConfig } = require('./lib/config');
 const { pollFavoriteBusinesses } = require('./lib/poller');

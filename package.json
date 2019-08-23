@@ -14,6 +14,10 @@
     "url": "https://github.com/marklagendijk/node-toogoodtogo-watcher/issues"
   },
   "homepage": "https://github.com/marklagendijk/node-toogoodtogo-watcher#readme",
+  "preferGlobal": true,
+  "bin": {
+    "toogoodtogo-watcher": "index.js"
+  },
   "dependencies": {
     "conf": "^5.0.0",
     "enquirer": "^2.3.1",
