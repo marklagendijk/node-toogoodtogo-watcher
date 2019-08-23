@@ -5,4 +5,4 @@ const { notifyIfChanged } = require('./lib/notifier');
 
 initConfig()
     .pipe(flatMap(() => pollFavoriteBusinesses()))
-    .subscribe(businesses => notifyIfChanged(businesses))
+    .subscribe(businesses => notifyIfChanged(businesses), console.error);
