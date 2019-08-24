@@ -24,6 +24,7 @@
     "node-notifier": "^5.4.3",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "rxjs": "^6.5.2"
+    "rxjs": "^6.5.2",
+    "telegraf": "^3.32.0"
   }
 }
