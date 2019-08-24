@@ -1,11 +1,11 @@
 {
   "name": "toogoodtogo-watcher",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Node.js cli tool for monitoring your favorite TooGoodToGo businesses.",
   "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "MIR",
+  "keywords": ["TooGoodToGo", "notifications", "desktop", "telegram"],
+  "author": "Mark Lagendijk <mark@lagendijk.nl>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marklagendijk/node-toogoodtogo-watcher.git"
