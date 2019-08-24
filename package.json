@@ -3,7 +3,12 @@
   "version": "1.1.0",
   "description": "Node.js cli tool for monitoring your favorite TooGoodToGo businesses.",
   "main": "index.js",
-  "keywords": ["TooGoodToGo", "notifications", "desktop", "telegram"],
+  "keywords": [
+    "TooGoodToGo",
+    "notifications",
+    "desktop",
+    "telegram"
+  ],
   "author": "Mark Lagendijk <mark@lagendijk.nl>",
   "license": "MIT",
   "repository": {
@@ -21,7 +26,6 @@
   "dependencies": {
     "conf": "^5.0.0",
     "editor": "^1.0.0",
-    "enquirer": "^2.3.1",
     "lodash": "^4.17.15",
     "node-notifier": "^5.4.3",
     "request": "^2.88.0",
