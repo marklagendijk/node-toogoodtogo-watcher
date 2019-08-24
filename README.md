@@ -27,4 +27,4 @@ By default Windows doesn't display the notifications in the notification center.
 4. Start the application `toogoodtogo-watcher watch`
 5. Click the `t.me/BOTNAME` link from the `BotFather` chat message.
 6. Press `BEGIN`.
-7. Your bot should greet you, and show a notification about your favorites.
+7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which you configured. Multiple people can connect to the bot to get updates about these favorites.
