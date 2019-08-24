@@ -7,7 +7,7 @@ Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notificati
 ## Installation
 1. Install Node.js 8.x or higher ([Windows](https://nodejs.org/en/download/current/) | [Linux](https://github.com/nodesource/distributions#debinstall) | [OSx](https://nodejs.org/en/download/current/)).
 2. `npm install -g toogoodtogo-watcher`
-3. `toogoodtogo-watcher config`. Fill in your TooGoodToGo account details. Optionally enable / disable certain notifications. See [Configuring Telegram notifiations](#Configuring+Telegram+notifiations) for instructions on setting up the Telegram notifications.
+3. `toogoodtogo-watcher config`. Fill in your TooGoodToGo account details. Optionally enable / disable certain notifications. See [Configuring Telegram notifiations](#configuring-telegram-notifiations) for instructions on setting up the Telegram notifications.
 4. `toogoodtogo-watcher watch`
 
 ## Resetting config
