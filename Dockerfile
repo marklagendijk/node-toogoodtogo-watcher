@@ -1,6 +1,7 @@
 FROM node:10-alpine
-USER node
 WORKDIR /home/node/app
-COPY --chown=node:node . .
+COPY . .
 RUN npm install
+RUN chown -R node:node /home/node
+USER node
 CMD [ "node", "index.js", "watch" ]
