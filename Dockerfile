@@ -1,8 +1,6 @@
 FROM node:10-alpine
-WORKDIR /home/node/app
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node
-COPY package*.json ./
 USER node
-RUN npm install
+WORKDIR /home/node/app
 COPY --chown=node:node . .
+RUN npm install
 CMD [ "node", "index.js", "watch" ]
