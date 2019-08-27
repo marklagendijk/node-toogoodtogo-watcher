@@ -44,7 +44,7 @@ By default Windows doesn't display the notifications in the notification center.
 7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which you configured. Multiple people can connect to the bot to get updates about these favorites.
 
 ## Docker
-Create a directory `config` and copy the `config.defaults.json` to `config/config.json`. 
+Create a directory `config` and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `config/config.json`. 
 See above for instructions on how to configure the application.
 
 ### Docker run
