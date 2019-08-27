@@ -4,7 +4,7 @@ Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notificati
 - Console output
 - Telegram chat message
 
-See below for Docker usage.
+See [below for Docker usage](#docker).
 
 ## Installation
 1. Install Node.js 8.x or higher ([Windows](https://nodejs.org/en/download/current/) | [Linux](https://github.com/nodesource/distributions#debinstall) | [OSx](https://nodejs.org/en/download/current/)).
