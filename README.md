@@ -10,8 +10,20 @@ Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notificati
 3. `toogoodtogo-watcher config`. Fill in your TooGoodToGo account details. Optionally enable / disable certain notifications. See [Configuring Telegram notifiations](#configuring-telegram-notifiations) for instructions on setting up the Telegram notifications.
 4. `toogoodtogo-watcher watch`
 
-## Resetting config
-`toogoodtogo-watcher config --reset`
+## CLI documentation
+```
+Usage: toogoodtogo-watcher <command>
+
+Commands:
+  config        Edit the config file.
+  config-reset  Reset the config to the default values.
+  config-path   Show the path of the config file.
+  watch         Watch your favourite busininesses for changes.
+
+Options:
+  --help     Show help                                                 [boolean]
+  --version  Show version number                                       [boolean]
+```
 
 ## Displaying the notifications in the Windows notification center
 By default Windows doesn't display the notifications in the notification center. You can enable this by doing the following steps.
