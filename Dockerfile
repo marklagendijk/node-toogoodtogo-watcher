@@ -1,7 +1,10 @@
 FROM node:10-alpine
 WORKDIR /home/node/app
-COPY . .
+COPY package*.json ./
 RUN npm install
-RUN chown -R node:node /home/node
+COPY . .
+RUN mkdir -p /home/node/.config/toogoodtogo-watcher-nodejs && \
+    chown -R node:node /home/node/.config
 USER node
+VOLUME /home/node/.config/toogoodtogo-watcher-nodejs/config.json
 CMD [ "node", "index.js", "watch" ]
