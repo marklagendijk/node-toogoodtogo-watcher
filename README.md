@@ -4,6 +4,8 @@ Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notificati
 - Console output
 - Telegram chat message
 
+See below for Docker usage.
+
 ## Installation
 1. Install Node.js 8.x or higher ([Windows](https://nodejs.org/en/download/current/) | [Linux](https://github.com/nodesource/distributions#debinstall) | [OSx](https://nodejs.org/en/download/current/)).
 2. `npm install -g toogoodtogo-watcher`
@@ -40,3 +42,28 @@ By default Windows doesn't display the notifications in the notification center.
 5. Click the `t.me/BOTNAME` link from the `BotFather` chat message.
 6. Press `BEGIN`.
 7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which you configured. Multiple people can connect to the bot to get updates about these favorites.
+
+## Docker
+Create a directory `config` and copy the `config.defaults.json` to `config/config.json`. 
+See above for instructions on how to configure the application.
+
+### Docker run
+```
+docker run \
+ --name toogoodtogo-watcher \
+ -v /full/path/to/config:/home/node/.config/toogoodtogo-watcher-nodejs \
+ marklagendijk/toogoodtogo-watcher`
+```
+
+### Docker Compose
+
+`docker-compose.yaml`:
+```yaml
+version: "3"
+services:
+  toogoodtogo-watcher:
+    image: marklagendijk/toogoodtogo-watcher
+    restart: unless-stopped
+    volumes:
+      - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
+```
