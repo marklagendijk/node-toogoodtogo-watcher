@@ -1,4 +1,4 @@
-# node-toogoodtogo-watcher  [![NPM version][npm-image]][npm-url][![Dependency Status][depstat-image]][depstat-url]
+# node-toogoodtogo-watcher [![GitHub license](https://img.shields.io/github/license/marklagendijk/node-toogoodtogo-watcher)](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/LICENSE) ![npm](https://img.shields.io/npm/v/toogoodtogo-watcher) ![Docker Pulls](https://img.shields.io/docker/pulls/marklagendijk/toogoodtogo-watcher)
 Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notifications are shown when the stock of any of the businesses changes. The following notification types are supported:
 - Desktop notification
 - Console output
@@ -77,5 +77,6 @@ services:
 [npm-image]: https://badge.fury.io/js/toogoodtogo-watcher.png
 
 [depstat-url]: https://david-dm.org/marklagendijk/toogoodtogo-watcher
-[depstat-image]: https://david-dm.org/marklagendijk/toogoodtogo-watcher.png
+[depstat-image]: https://img.shields.io/david/marklagendijk/node-toogoodtogo-watcher
+
 
