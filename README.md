@@ -68,15 +68,3 @@ services:
       - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
 ```
 
-
-## License
-
-[MIT License](http://en.wikipedia.org/wiki/MIT_License)
-
-[npm-url]: https://npmjs.org/package/toogoodtogo-watcher
-[npm-image]: https://badge.fury.io/js/toogoodtogo-watcher.png
-
-[depstat-url]: https://david-dm.org/marklagendijk/toogoodtogo-watcher
-[depstat-image]: https://img.shields.io/david/marklagendijk/node-toogoodtogo-watcher
-
-
