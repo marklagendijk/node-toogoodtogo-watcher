@@ -7,7 +7,8 @@
         "headers": {
             "User-Agent": "TGTG/19.6.0 (637) (Android/Unknown; Scale/3.00)"
         },
-        "pollingIntervalInMs": 30000
+        "pollingIntervalInMs": 30000,
+        "authenticationIntervalInMS": 86400000
     },
     "notifications": {
         "console": {
