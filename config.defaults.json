@@ -5,10 +5,10 @@
             "password": "Password of your TooGoodToGo account."
         },
         "headers": {
-            "User-Agent": "TGTG/19.6.0 (637) (Android/Unknown; Scale/3.00)"
+            "User-Agent": "TGTG/19.12.0 (724) (Android/Unknown; Scale/3.00)"
         },
         "pollingIntervalInMs": 30000,
-        "authenticationIntervalInMS": 86400000
+        "authenticationIntervalInMS": 3600000
     },
     "notifications": {
         "console": {
