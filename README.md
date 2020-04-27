@@ -43,6 +43,18 @@ By default Windows doesn't display the notifications in the notification center.
 6. Press `BEGIN`.
 7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which you configured. Multiple people can connect to the bot to get updates about these favorites.
 
+## Configure IFTTT integration
+1. Go to https://ifttt.com/create/
+2. Click on `this` and select **Webhooks**
+3. Fill in an **Event Name** (e.g. `too_good_to_go_updated`)
+4. Click on `that` 
+5. Select anything you'd like to integrate with (e.g. Philips Hue)
+6. Finish setting it up 
+7. Update the `ifttt` configuration via `toogoodtogo-watcher config`:
+    - set `enabled` to `true`
+    - set `webhookKey` to the token found at [Web Hook settings](https://ifttt.com/services/maker_webhooks/settings) (last part of the URL)
+    - set `webhookName` to the Event Name selected in step 3
+
 ## Docker
 Create a directory `config` and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `config/config.json`. 
 See above for instructions on how to configure the application.
