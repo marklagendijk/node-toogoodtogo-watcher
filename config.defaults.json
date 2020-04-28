@@ -1,1 +1,32 @@
-/usr/lib/node_modules/toogoodtogo-watcher/config.defaults.json
+{
+    "api": {
+        "credentials": {
+            "email": "Email of your TooGoodToGo account.",
+            "password": "Password of your TooGoodToGo account."
+        },
+        "session": {},
+        "headers": {
+            "User-Agent": "TGTG/19.12.0 (724) (Android/Unknown; Scale/3.00)"
+        },
+        "pollingIntervalInMs": 30000,
+        "authenticationIntervalInMS": 3600000
+    },
+    "notifications": {
+        "format": 1,
+        "min_stock": 1,
+        "console": {
+            "enabled": true,
+            "clear": true,
+            "include_time": true
+        },
+        "desktop": {
+            "enabled": true
+        },
+        "telegram": {
+            "enabled": false,
+            "botToken": "See README",
+            "chats": {}
+        }
+    }
+}
+
