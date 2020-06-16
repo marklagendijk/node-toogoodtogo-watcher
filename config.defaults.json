@@ -24,5 +24,11 @@
             "botToken": "See README",
             "chats": {}
         }
+    },
+    "messageFilter": {
+        "showUnchanged": false,
+        "showDecrease": false,
+        "showIncrease": false,
+        "showIncreaseFromZero": true
     }
 }
