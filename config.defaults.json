@@ -28,6 +28,7 @@
     "messageFilter": {
         "showUnchanged": false,
         "showDecrease": false,
+        "showDecreaseToZero": false,
         "showIncrease": false,
         "showIncreaseFromZero": true
     }
