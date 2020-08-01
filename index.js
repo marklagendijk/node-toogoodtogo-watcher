@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const { pollFavoriteBusinesses } = require('./lib/poller');
-const { notifyIfChanged } = require('./lib/notifier');
+const notifier = require('./lib/notifier');
+const { pollFavoriteBusinesses$ } = require('./lib/poller');
 const { editConfig, resetConfig, configPath } = require('./lib/config');
 
 const argv = require('yargs')
@@ -26,7 +26,7 @@ case 'config-path':
     break;
 
 case 'watch':
-    pollFavoriteBusinesses()
-        .subscribe(businesses => notifyIfChanged(businesses), console.error);
+    pollFavoriteBusinesses$(notifier.hasListeners$())
+        .subscribe(businesses => notifier.notifyIfChanged(businesses), console.error);
     break;
 }

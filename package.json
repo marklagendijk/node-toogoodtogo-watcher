@@ -1,6 +1,6 @@
 {
   "name": "toogoodtogo-watcher",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Node.js cli tool for monitoring your favorite TooGoodToGo businesses.",
   "main": "index.js",
   "keywords": [
@@ -24,14 +24,14 @@
     "toogoodtogo-watcher": "index.js"
   },
   "dependencies": {
-    "conf": "^6.2.3",
+    "conf": "^7.1.1",
     "editor": "^1.0.0",
-    "lodash": "^4.17.15",
-    "node-notifier": "^7.0.0",
+    "lodash": "^4.17.19",
+    "node-notifier": "^7.0.2",
     "request": "^2.88.2",
-    "request-promise": "^4.2.5",
-    "rxjs": "^6.5.5",
-    "telegraf": "^3.37.0",
-    "yargs": "^15.3.1"
+    "request-promise": "^4.2.6",
+    "rxjs": "^6.6.2",
+    "telegraf": "^3.38.0",
+    "yargs": "^15.4.1"
   }
 }

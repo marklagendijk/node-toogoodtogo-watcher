@@ -13,16 +13,16 @@
     },
     "notifications": {
         "console": {
-            "enabled": true,
+            "enabled": false,
             "clear": true
         },
         "desktop": {
-            "enabled": true
+            "enabled": false
         },
         "telegram": {
             "enabled": false,
             "botToken": "See README",
-            "chats": {}
+            "chats": []
         }
     },
     "messageFilter": {
