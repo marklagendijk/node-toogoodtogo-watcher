@@ -1,35 +1,35 @@
 {
-    "api": {
-        "credentials": {
-            "email": "Email of your TooGoodToGo account.",
-            "password": "Password of your TooGoodToGo account."
-        },
-        "session": {},
-        "headers": {
-            "User-Agent": "TGTG/19.12.0 (724) (Android/Unknown; Scale/3.00)"
-        },
-        "pollingIntervalInMs": 30000,
-        "authenticationIntervalInMS": 3600000
+  "api": {
+    "credentials": {
+      "email": "Email of your TooGoodToGo account.",
+      "password": "Password of your TooGoodToGo account."
     },
-    "notifications": {
-        "console": {
-            "enabled": false,
-            "clear": true
-        },
-        "desktop": {
-            "enabled": false
-        },
-        "telegram": {
-            "enabled": false,
-            "botToken": "See README",
-            "chats": []
-        }
+    "session": {},
+    "headers": {
+      "User-Agent": "TGTG/19.12.0 (724) (Android/Unknown; Scale/3.00)"
     },
-    "messageFilter": {
-        "showUnchanged": false,
-        "showDecrease": false,
-        "showDecreaseToZero": false,
-        "showIncrease": false,
-        "showIncreaseFromZero": true
+    "pollingIntervalInMs": 30000,
+    "authenticationIntervalInMS": 3600000
+  },
+  "notifications": {
+    "console": {
+      "enabled": false,
+      "clear": true
+    },
+    "desktop": {
+      "enabled": false
+    },
+    "telegram": {
+      "enabled": false,
+      "botToken": "See README",
+      "chats": []
     }
+  },
+  "messageFilter": {
+    "showUnchanged": false,
+    "showDecrease": false,
+    "showDecreaseToZero": false,
+    "showIncrease": false,
+    "showIncreaseFromZero": true
+  }
 }

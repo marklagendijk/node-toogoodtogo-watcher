@@ -32,5 +32,24 @@
     "rxjs": "^6.6.2",
     "telegraf": "^3.38.0",
     "yargs": "^15.4.1"
+  },
+  "scripts": {
+    "lint": "prettier --write . && eslint --cache --fix ."
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": "prettier --write",
+    "*.js": "eslint --cache --fix"
   }
 }
