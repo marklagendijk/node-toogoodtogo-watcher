@@ -31,7 +31,8 @@
     "node-notifier": "^7.0.2",
     "rxjs": "^6.6.2",
     "telegraf": "^3.38.0",
-    "yargs": "^15.4.1"
+    "yargs": "^15.4.1",
+    "nodemailer":"^6.0.0"
   },
   "scripts": {
     "lint": "prettier --write . && eslint --cache --fix ."
