@@ -8,8 +8,14 @@
     "headers": {
       "User-Agent": "TooGoodToGo/20.6.1 (813) (iPhone/iPhone 7 (GSM); iOS 13.6; Scale/2.00)"
     },
-    "pollingIntervalInMs": 30000,
-    "authenticationIntervalInMS": 3600000
+    "pollingIntervalInMs": {
+      "max": 65000,
+      "min": 35000
+    },
+    "authenticationIntervalInMs": {
+      "max": 3800000,
+      "min": 3600000
+    }
   },
   "notifications": {
     "console": {
@@ -36,5 +42,10 @@
     "showDecreaseToZero": false,
     "showIncrease": false,
     "showIncreaseFromZero": true
+  },
+  "location": {
+    "latitude": 52.5170365,
+    "longitude": 13.3888599,
+    "radius": 200
   }
 }

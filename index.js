@@ -8,7 +8,7 @@ const argv = require("yargs")
   .command("config", "Edit the config file.")
   .command("config-reset", "Reset the config to the default values.")
   .command("config-path", "Show the path of the config file.")
-  .command("watch", "Watch your favourite busininesses for changes.")
+  .command("watch", "Watch your favourite businesses for changes.")
   .demandCommand().argv;
 
 switch (argv._[0]) {
