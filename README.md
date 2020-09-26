@@ -39,7 +39,7 @@ By default Windows doesn't display the notifications in the notification center.
 2. Click on the 'toast' app at the bottom of the screen.
 3. Enable the 'show in action center' checkbox.
 
-## Configuring Telegram notifiations
+## Configuring Telegram notifications
 
 1. Open a Telegram chat with `BotFather`.
 2. Follow the instructions to create your own bot.
