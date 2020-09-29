@@ -47,8 +47,5 @@
     "latitude": 52.5170365,
     "longitude": 13.3888599,
     "radius": 200
-  },
-  "misc": {
-    "schedule": ["0-24"]
   }
 }
