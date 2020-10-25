@@ -60,7 +60,9 @@ By default Windows doesn't display the notifications in the notification center.
 7. Update the `ifttt` configuration via `toogoodtogo-watcher config`:
    - set `enabled` to `true`
    - set `webhookKey` to the token found at [Web Hook settings](https://ifttt.com/services/maker_webhooks/settings) (last part of the URL)
-   - set `webhookName` to the Event Name selected in step 3
+   - add the **Event Name** selected in step 3 to the `webhookEvents` array
+
+Note: You can add multiple events to `webhookEvents`
 
 ## Docker
 

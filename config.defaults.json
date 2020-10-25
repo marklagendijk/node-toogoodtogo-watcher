@@ -27,7 +27,7 @@
     "ifttt": {
       "enabled": false,
       "webhookKey": "see README",
-      "webhookEvent": "see README"
+      "webhookEvents": ["see README"]
     }
   },
   "messageFilter": {
