@@ -1,0 +1,7 @@
+node_modules
+.idea
+.eslintcache
+.eslintignore
+.gitignore
+.prettierignore
+.prettierrc
