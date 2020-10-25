@@ -25,9 +25,9 @@
       "chats": []
     },
     "ifttt": {
-        "enabled": false,
-        "webhookKey": "see README",
-        "webhookEvent": "see README"
+      "enabled": false,
+      "webhookKey": "see README",
+      "webhookEvent": "see README"
     }
   },
   "messageFilter": {
