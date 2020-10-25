@@ -23,6 +23,11 @@
       "enabled": false,
       "botToken": "See README",
       "chats": []
+    },
+    "ifttt": {
+        "enabled": false,
+        "webhookKey": "see README",
+        "webhookEvent": "see README"
     }
   },
   "messageFilter": {
