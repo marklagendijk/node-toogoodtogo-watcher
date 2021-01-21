@@ -101,7 +101,7 @@ To still be able to run the tool on a Raspberry Pi, we can use the `node` image 
 ```yaml
 version: "3"
 services:
-  transip-dns-cli:
+  toogoodtogo-watcher:
     image: node:lts
     restart: unless-stopped
     working_dir: /home/node
