@@ -90,3 +90,24 @@ services:
     volumes:
       - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
 ```
+
+### Docker Compose on Raspberry Pi
+
+The Docker images of the tool are automatically build via Docker Hub. Unfortunately it is currently either impossible or very hard to automatically build multi-arch Docker images via Docker Hub. Because of this the the tool is only build for the `linux/amd64` architecture.
+
+To still be able to run the tool on a Raspberry Pi, we can use the `node` image instead, and install the tool on startup:
+`docker-compose.yml`:
+
+```yaml
+version: "3"
+services:
+  transip-dns-cli:
+    image: node:lts
+    restart: unless-stopped
+    working_dir: /home/node
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
+    command: bash -c "npm install --no-save --no-package-lock toogoodtogo-watcher && ./node_modules/.bin/toogoodtogo-watcher watch"
+```
