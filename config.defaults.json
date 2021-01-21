@@ -23,7 +23,13 @@
       "enabled": false,
       "botToken": "See README",
       "chats": []
-    }
+    },
+		"gmail": {
+			"enabled": false,
+			"username": "Your Gmail main email address ",
+			"password": "Your Gmail Password",
+			"recipient": "Recipient email Address here"
+		}
   },
   "messageFilter": {
     "showUnchanged": false,
