@@ -28,7 +28,7 @@
     "editor": "^1.0.0",
     "got": "^11.5.1",
     "lodash": "^4.17.19",
-    "node-notifier": "^7.0.2",
+    "node-notifier": "^8.0.1",
     "rxjs": "^6.6.2",
     "telegraf": "^3.38.0",
     "yargs": "^15.4.1"
