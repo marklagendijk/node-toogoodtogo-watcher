@@ -49,6 +49,21 @@ By default Windows doesn't display the notifications in the notification center.
 6. Press `BEGIN`.
 7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which you configured. Multiple people can connect to the bot to get updates about these favorites.
 
+## Configure IFTTT integration
+
+1. Go to https://ifttt.com/create/
+2. Click on `this` and select **Webhooks**
+3. Fill in an **Event Name** (e.g. `too_good_to_go_updated`)
+4. Click on `that`
+5. Select anything you'd like to integrate with (e.g. Philips Hue)
+6. Finish setting it up
+7. Update the `ifttt` configuration via `toogoodtogo-watcher config`:
+   - set `enabled` to `true`
+   - set `webhookKey` to the token found at [Web Hook settings](https://ifttt.com/services/maker_webhooks/settings) (last part of the URL)
+   - add the **Event Name** selected in step 3 to the `webhookEvents` array
+
+Note: You can add multiple events to `webhookEvents`
+
 ## Docker
 
 Create a directory `config` and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `config/config.json`. See above for instructions on how to configure the application.
@@ -74,4 +89,25 @@ services:
     restart: unless-stopped
     volumes:
       - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
+```
+
+### Docker Compose on Raspberry Pi
+
+The Docker images of the tool are automatically build via Docker Hub. Unfortunately it is currently either impossible or very hard to automatically build multi-arch Docker images via Docker Hub. Because of this the the tool is only build for the `linux/amd64` architecture.
+
+To still be able to run the tool on a Raspberry Pi, we can use the `node` image instead, and install the tool on startup:
+`docker-compose.yml`:
+
+```yaml
+version: "3"
+services:
+  toogoodtogo-watcher:
+    image: node:lts
+    restart: unless-stopped
+    working_dir: /home/node
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
+    command: bash -c "npm install --no-save --no-package-lock toogoodtogo-watcher && ./node_modules/.bin/toogoodtogo-watcher watch"
 ```
