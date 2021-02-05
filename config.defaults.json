@@ -1,8 +1,8 @@
 {
   "api": {
     "credentials": {
-      "email": "Email of your TooGoodToGo account.",
-      "password": "Password of your TooGoodToGo account."
+      "email": "",
+      "password": ""
     },
     "session": {},
     "headers": {
@@ -20,8 +20,7 @@
       "enabled": false
     },
     "telegram": {
-      "enabled": false,
-      "botToken": "See README",
+      "enabled": true,
       "chats": []
     }
   },

@@ -25,15 +25,19 @@
   },
   "dependencies": {
     "conf": "^7.1.1",
+    "dateformat": "^4.0.0",
     "editor": "^1.0.0",
     "got": "^11.5.1",
     "lodash": "^4.17.19",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.32",
     "node-notifier": "^7.0.2",
     "rxjs": "^6.6.2",
     "telegraf": "^3.38.0",
     "yargs": "^15.4.1"
   },
   "scripts": {
+    "start": "node index.js start",
     "lint": "prettier --write . && eslint --cache --fix ."
   },
   "devDependencies": {
