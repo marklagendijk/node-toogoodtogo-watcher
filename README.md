@@ -73,6 +73,7 @@ Create a directory `config` and copy the [config.defaults.json](https://github.c
 ```
 docker run \
  --name toogoodtogo-watcher \
+ -e TZ=Europe/Amsterdam \
  -v /full/path/to/config:/home/node/.config/toogoodtogo-watcher-nodejs \
  marklagendijk/toogoodtogo-watcher`
 ```
@@ -87,6 +88,8 @@ services:
   toogoodtogo-watcher:
     image: marklagendijk/toogoodtogo-watcher
     restart: unless-stopped
+    environment:
+      - TZ=Europe/Amsterdam
     volumes:
       - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
 ```
@@ -107,6 +110,7 @@ services:
     working_dir: /home/node
     environment:
       - NODE_ENV=production
+      - TZ=Europe/Amsterdam
     volumes:
       - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
     command: bash -c "npm install --no-save --no-package-lock toogoodtogo-watcher && ./node_modules/.bin/toogoodtogo-watcher watch"
