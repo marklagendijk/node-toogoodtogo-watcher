@@ -28,6 +28,7 @@
     "editor": "^1.0.0",
     "got": "^11.5.1",
     "lodash": "^4.17.19",
+    "moment-timezone": "^0.5.32",
     "node-notifier": "^8.0.1",
     "rxjs": "^6.6.2",
     "telegraf": "^3.38.0",
