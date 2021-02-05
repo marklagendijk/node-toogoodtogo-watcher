@@ -5,6 +5,7 @@ Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notificati
 - Desktop notification
 - Console output
 - Telegram chat message
+- Heroku intergration
 
 See [below for Docker usage](#docker).
 
@@ -75,3 +76,11 @@ services:
     volumes:
       - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
 ```
+
+### Heroku integration
+
+Create new app and set these Config Vars (App > Settings):
+
+- TELEGRAM_BOT_TOKEN
+- TGTG_EMAIL
+- TGTG_PASSWORD
