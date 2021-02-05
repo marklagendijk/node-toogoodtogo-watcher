@@ -51,12 +51,12 @@ By default Windows doesn't display the notifications in the notification center.
 
 ## Configure IFTTT integration
 
-1. Go to https://ifttt.com/create/
-2. Click on `this` and select **Webhooks**
-3. Fill in an **Event Name** (e.g. `too_good_to_go_updated`)
-4. Click on `that`
-5. Select anything you'd like to integrate with (e.g. Philips Hue)
-6. Finish setting it up
+1. Go to [https://ifttt.com/create/](https://ifttt.com/create/).
+2. Click on `this` and select **Webhooks**.
+3. Fill in an **Event Name** (e.g. `too_good_to_go_updated`).
+4. Click on `that`.
+5. Select anything you'd like to integrate with (e.g. Philips Hue).
+6. Finish setting it up. Note: `value1` contains a plain text message, `value2` contains an HTML message.
 7. Update the `ifttt` configuration via `toogoodtogo-watcher config`:
    - set `enabled` to `true`
    - set `webhookKey` to the token found at [Web Hook settings](https://ifttt.com/services/maker_webhooks/settings) (last part of the URL)
