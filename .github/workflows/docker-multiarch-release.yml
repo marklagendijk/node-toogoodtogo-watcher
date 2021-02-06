@@ -14,6 +14,7 @@ jobs:
         
       # https://github.com/martinbeentjes/npm-get-version-action
       - name: get-npm-version
+        id: package-version
         uses: martinbeentjes/npm-get-version-action@master
       
       # https://github.com/docker/setup-qemu-action#usage
@@ -40,4 +41,5 @@ jobs:
           platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           push: true
           tags: |
-            marklagendijk/toogoodtogo-watcher:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ steps.package-version.outputs.current-version}}
