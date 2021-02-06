@@ -41,4 +41,3 @@ jobs:
           push: true
           tags: |
             marklagendijk/toogoodtogo-watcher:latest
-            marklagendijk/toogoodtogo-watcher:${{ steps.package-version.outputs.current-version}}
