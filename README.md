@@ -65,6 +65,7 @@ By default Windows doesn't display the notifications in the notification center.
 Note: You can add multiple events to `webhookEvents`
 
 ## Docker
+Note: the Docker image is a multiarch image. So it will also work on Raspberry Pi's.
 
 Create a directory `config` and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `config/config.json`. See above for instructions on how to configure the application.
 
@@ -92,26 +93,4 @@ services:
       - TZ=Europe/Amsterdam
     volumes:
       - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
-```
-
-### Docker Compose on Raspberry Pi
-
-The Docker images of the tool are automatically build via Docker Hub. Unfortunately it is currently either impossible or very hard to automatically build multi-arch Docker images via Docker Hub. Because of this the the tool is only build for the `linux/amd64` architecture.
-
-To still be able to run the tool on a Raspberry Pi, we can use the `node` image instead, and install the tool on startup:
-`docker-compose.yml`:
-
-```yaml
-version: "3"
-services:
-  toogoodtogo-watcher:
-    image: node:lts
-    restart: unless-stopped
-    working_dir: /home/node
-    environment:
-      - NODE_ENV=production
-      - TZ=Europe/Amsterdam
-    volumes:
-      - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
-    command: bash -c "npm install --no-save --no-package-lock toogoodtogo-watcher && ./node_modules/.bin/toogoodtogo-watcher watch"
 ```
