@@ -40,5 +40,5 @@ jobs:
           platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ steps.package-version.outputs.current-version}}
+            marklagendijk/toogoodtogo-watcher:latest
+            marklagendijk/toogoodtogo-watcher:${{ steps.package-version.outputs.current-version}}
