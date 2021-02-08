@@ -77,9 +77,9 @@ services:
       - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
 ```
 
-### Heroku integration
+## Heroku integration
 
-Create new app and set these Config Vars (App > Settings):
+Create a new app and set these Config Vars (in App > Settings):
 
 - TELEGRAM_BOT_TOKEN
 - TGTG_EMAIL
