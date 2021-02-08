@@ -1,4 +1,4 @@
-# node-toogoodtogo-watcher [![build](https://github.com/alice17/node-toogoodtogo-watcher/workflows/node%20build/badge.svg)](https://github.com/alice17/node-toogoodtogo-watcher/actions)
+# node-toogoodtogo-watcher [![build](https://github.com/alice17/node-toogoodtogo-watcher/workflows/Node%20Build/badge.svg)](https://github.com/alice17/node-toogoodtogo-watcher/actions)
 
 This is a fork of the original [Too Good To Go watcher](https://github.com/marklagendijk/node-toogoodtogo-watcher/) created in order to run it on Heroku.
 
