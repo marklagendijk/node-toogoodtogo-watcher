@@ -1,9 +1,5 @@
 {
   "api": {
-    "credentials": {
-      "email": "",
-      "password": ""
-    },
     "session": {},
     "headers": {
       "User-Agent": "TooGoodToGo/20.6.1 (813) (iPhone/iPhone 7 (GSM); iOS 13.6; Scale/2.00)"
@@ -15,9 +11,6 @@
     "console": {
       "enabled": false,
       "clear": true
-    },
-    "desktop": {
-      "enabled": false
     },
     "telegram": {
       "enabled": true,

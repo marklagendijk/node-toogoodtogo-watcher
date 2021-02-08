@@ -1,13 +1,12 @@
 # node-toogoodtogo-watcher
 
+This is a fork of the original [Too Good To Go watcher](https://github.com/marklagendijk/node-toogoodtogo-watcher/) created in order to run it on Heroku.
+
 Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notifications are shown when the stock of any of the businesses changes. The following notification types are supported:
 
-- Desktop notification
 - Console output
 - Telegram chat message
 - Heroku intergration
-
-See [below for Docker usage](#docker).
 
 ## Installation
 
@@ -32,14 +31,6 @@ Options:
   --version  Show version number                                       [boolean]
 ```
 
-## Displaying the notifications in the Windows notification center
-
-By default Windows doesn't display the notifications in the notification center. You can enable this by doing the following steps.
-
-1. Go to 'notifications & actions settings' (`Windows key`, type 'notifications', `enter`)
-2. Click on the 'toast' app at the bottom of the screen.
-3. Enable the 'show in action center' checkbox.
-
 ## Configuring Telegram notifications
 
 1. Open a Telegram chat with `BotFather`.
@@ -50,33 +41,6 @@ By default Windows doesn't display the notifications in the notification center.
 6. Press `BEGIN`.
 7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which you configured. Multiple people can connect to the bot to get updates about these favorites.
 
-## Docker
-
-Create a directory `config` and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `config/config.json`. See above for instructions on how to configure the application.
-
-### Docker run
-
-```
-docker run \
- --name toogoodtogo-watcher \
- -v /full/path/to/config:/home/node/.config/toogoodtogo-watcher-nodejs \
- marklagendijk/toogoodtogo-watcher`
-```
-
-### Docker Compose
-
-`docker-compose.yaml`:
-
-```yaml
-version: "3"
-services:
-  toogoodtogo-watcher:
-    image: marklagendijk/toogoodtogo-watcher
-    restart: unless-stopped
-    volumes:
-      - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
-```
-
 ## Heroku integration
 
 Create a new app and set these Config Vars (in App > Settings):
@@ -84,3 +48,7 @@ Create a new app and set these Config Vars (in App > Settings):
 - TELEGRAM_BOT_TOKEN
 - TGTG_EMAIL
 - TGTG_PASSWORD
+
+## TODO
+
+- [ ] List favourite business command
