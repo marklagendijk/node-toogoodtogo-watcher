@@ -36,5 +36,10 @@
     "showDecreaseToZero": false,
     "showIncrease": false,
     "showIncreaseFromZero": true
+  },
+  "location": {
+    "latitude": 52.5170365,
+    "longitude": 13.3888599,
+    "radius": 200
   }
 }
