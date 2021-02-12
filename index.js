@@ -10,11 +10,12 @@ const {
 
 const argv = require("yargs")
   .usage("Usage: toogoodtogo-watcher <command>")
+  .env("TOOGOODTOGO")
   .command("config", "Edit the config file.")
   .command("config-reset", "Reset the config to the default values.")
   .command("config-path", "Show the path of the config file.")
   .command("watch", "Watch your favourite businesses for changes.", (yargs) => {
-    return yargs.env("TOOGOODTOGO").option("configFile", {
+    return yargs.option("configFile", {
       alias: "cf",
       usage: "Specify custom config file content.",
     });
