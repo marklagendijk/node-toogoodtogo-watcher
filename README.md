@@ -69,13 +69,13 @@ Note: the Docker image is a multiarch image. So it will also work on Raspberry P
 
 ### Docker run
 1. Create a directory to store the config file and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) into `YOUR_FOLDER/config.json`. See above for instructions on how to configure the application.
-2. Run the following command. Example: a user `john` who stored the config folder in `~/docker/toogoodtogo-watcher`:
+2. Run the following command. Example: a user `john` who stored the config in `~/docker/toogoodtogo-watcher/config.json`:
 
 ```
 docker run \
  --name toogoodtogo-watcher \
  -e TZ=Europe/Amsterdam \
- -v /home/john/docker/toogoodtogo-watcher/config:/home/node/.config/toogoodtogo-watcher-nodejs \
+ -v /home/john/docker/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
  marklagendijk/toogoodtogo-watcher
 ```
 
