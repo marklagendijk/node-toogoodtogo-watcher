@@ -67,21 +67,22 @@ Note: You can add multiple events to `webhookEvents`
 ## Docker
 Note: the Docker image is a multiarch image. So it will also work on Raspberry Pi's.
 
-Create a directory `config` and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `config/config.json`. See above for instructions on how to configure the application.
-
 ### Docker run
+1. Create a directory to store the config file and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) into `YOUR_FOLDER/config.json`. See above for instructions on how to configure the application.
+2. Run the following command. Example: a user `john` who stored the config folder in `~/docker/toogoodtogo-watcher`:
 
 ```
 docker run \
  --name toogoodtogo-watcher \
  -e TZ=Europe/Amsterdam \
- -v /full/path/to/config:/home/node/.config/toogoodtogo-watcher-nodejs \
- marklagendijk/toogoodtogo-watcher`
+ -v /home/john/docker/toogoodtogo-watcher/config:/home/node/.config/toogoodtogo-watcher-nodejs \
+ marklagendijk/toogoodtogo-watcher
 ```
 
 ### Docker Compose
-
-`docker-compose.yaml`:
+1. Create a directory to contain all your Docker Compose things.
+2. Create a directory `toogoodtogo-watcher` inside the created directory, and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
+3. Create a file `docker-compose.yaml`:
 
 ```yaml
 version: "3"
@@ -92,5 +93,5 @@ services:
     environment:
       - TZ=Europe/Amsterdam
     volumes:
-      - ./config:/home/node/.config/toogoodtogo-watcher-nodejs
+      - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
 ```
