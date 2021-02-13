@@ -6,3 +6,4 @@ node_modules
 .prettierignore
 .prettierrc
 Dockerfile
+*.sh

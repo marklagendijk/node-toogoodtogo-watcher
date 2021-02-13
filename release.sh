@@ -1,6 +1,6 @@
-﻿#!/bin/bash
+#!/bin/bash
 # Usage ./release.sh major|minor|patch
-
-npm version $1
+set -e
+npm version "$1"
 git push
 git push --tags
