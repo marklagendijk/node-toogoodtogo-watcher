@@ -1,9 +1,9 @@
-name: Docker multiarch release
+name: Docker multiarch publish
 
 on:
   push:
-    branches: [master]
-  workflow_dispatch: # Manual trigger
+    tags:
+      - "v*"
 
 jobs:
   buildandpush:
