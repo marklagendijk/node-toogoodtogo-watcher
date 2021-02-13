@@ -1,7 +1,7 @@
 FROM node:14
 WORKDIR /home/node/app
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY . .
 RUN mkdir -p /home/node/.config/toogoodtogo-watcher-nodejs && \
     chown -R node:node /home/node/.config
