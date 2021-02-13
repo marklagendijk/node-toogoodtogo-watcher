@@ -22,41 +22,7 @@
     "telegram": {
       "enabled": false,
       "botToken": "See README",
-      "chats": [],
-      "commands": {
-        "showUnchanged": {
-          "command": "show_unchanged",
-          "description": "Activate alert for unchanged stock."
-        },
-        "showDecrease": {
-          "command": "show_decrease",
-          "description": "Activate alert for decreasing stock."
-        },
-        "showDecreaseToZero": {
-          "command": "show_decrease_to_zero",
-          "description": "Activate alert for sold out."
-        },
-        "showIncrease": {
-          "command": "show_increase",
-          "description": "Activate alert for increasing stock."
-        },
-        "showIncreaseFromZero": {
-          "command": "show_increase_from_zero",
-          "description": "Activate alert for new market available."
-        },
-        "start": {
-          "command": "start",
-          "description": "Activate bot."
-        },
-        "stop": {
-          "command": "stop",
-          "description": "Deactivate bot."
-        },
-        "config": {
-          "command": "config",
-          "description": "Show current configuration."
-        }
-      }
+      "chats": []
     },
     "ifttt": {
       "enabled": false,
