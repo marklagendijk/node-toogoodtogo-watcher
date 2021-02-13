@@ -1,12 +1,7 @@
 #!/usr/bin/env node
 const notifier = require("./lib/notifier");
 const { pollFavoriteBusinesses$ } = require("./lib/poller");
-const {
-  editConfig,
-  resetConfig,
-  configPath,
-  customConfig,
-} = require("./lib/config");
+const { editConfig, resetConfig, configPath, config } = require("./lib/config");
 
 const argv = require("yargs")
   .usage("Usage: toogoodtogo-watcher <command>")
@@ -14,11 +9,12 @@ const argv = require("yargs")
   .command("config", "Edit the config file.")
   .command("config-reset", "Reset the config to the default values.")
   .command("config-path", "Show the path of the config file.")
-  .command("watch", "Watch your favourite businesses for changes.", (yargs) => {
-    return yargs.option("configFile", {
-      alias: "cf",
-      usage: "Specify custom config file content.",
-    });
+  .command("watch", "Watch your favourite businesses for changes.", {
+    config: {
+      type: "string",
+      describe:
+        "Custom config. Note: the config will be overwrite the current config file.",
+    },
   })
   .demandCommand().argv;
 
@@ -36,8 +32,9 @@ switch (argv._[0]) {
     break;
 
   case "watch":
-    if (argv.configFile != null) {
-      customConfig(argv.configFile);
+    if (argv.config) {
+      const customConfig = JSON.parse(argv.config);
+      config.set(customConfig);
     }
 
     pollFavoriteBusinesses$(notifier.hasListeners$()).subscribe(

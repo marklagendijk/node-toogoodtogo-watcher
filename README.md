@@ -64,11 +64,6 @@ By default Windows doesn't display the notifications in the notification center.
 
 Note: You can add multiple events to `webhookEvents`
 
-## Configure Heroku integration
-
-1. Install the Heroku CLI and login.
-2. From your terminal, run ```heroku config:set TOOGOODTOGO_CONFIG_FILE=content```, replacing content with the content of your json config file.
-
 ## Docker
 Note: the Docker image is a multiarch image. So it will also work on Raspberry Pi's.
 
@@ -100,3 +95,8 @@ services:
     volumes:
       - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
 ```
+
+## Running with Heroku
+
+1. Install the Heroku CLI and login.
+2. From your terminal, run ```heroku config:set TOOGOODTOGO_CONFIG=content```, replacing content with the content of your config.json file.
