@@ -49,6 +49,14 @@ Create a new app and set these Config Vars (in App > Settings):
 - TGTG_EMAIL
 - TGTG_PASSWORD
 
+### Test locally
+
+Create an `.env` file and add the environment variables, then run:
+
+```
+heroku local
+```
+
 ## TODO
 
 - [ ] List favourite business command
