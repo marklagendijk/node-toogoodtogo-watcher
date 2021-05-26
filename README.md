@@ -83,7 +83,7 @@ docker run \
 Note: When using Gotify as notification, make sure to put them on the same network in docker if hosted on the same docker host, e.g.
 docker network create gotify
 and use "--network=gotify" on both containers
-You can than use "http://gotify" on this container if --name gotify is used for the gotify container
+You can then use "http://gotify" on this container if --name gotify is used for the gotify container
 
 ### Docker Compose
 1. Create a directory to contain all your Docker Compose things.
