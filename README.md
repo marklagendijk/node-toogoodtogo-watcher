@@ -5,6 +5,7 @@ Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notificati
 - Desktop notification
 - Console output
 - Telegram chat message
+- Push message via Gotify
 
 See [below for Docker usage](#docker).
 
@@ -78,6 +79,11 @@ docker run \
  -v /home/john/docker/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
  marklagendijk/toogoodtogo-watcher
 ```
+
+Note: When using Gotify as notification, make sure to put them on the same network in docker if hosted on the same docker host, e.g.
+docker network create gotify
+and use "--network=gotify" on both containers
+You can than use "http://gotify" on this container if --name gotify is used for the gotify container
 
 ### Docker Compose
 1. Create a directory to contain all your Docker Compose things.
