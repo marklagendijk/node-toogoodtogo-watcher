@@ -102,7 +102,7 @@ services:
     environment:
       - TZ=Europe/Amsterdam
     volumes:
-      - ./toogoodtogo-watcher-fork:/home/node/.config/toogoodtogo-watcher-nodejs
+      - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
 ```
 
 ## Running with Heroku
