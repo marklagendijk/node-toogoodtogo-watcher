@@ -1,4 +1,4 @@
-# node-toogoodtogo-watcher [![GitHub license](https://img.shields.io/github/license/marklagendijk/node-toogoodtogo-watcher)](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/toogoodtogo-watcher)](https://www.npmjs.com/package/toogoodtogo-watcher) [![Docker Pulls](https://img.shields.io/docker/pulls/marklagendijk/toogoodtogo-watcher)](https://hub.docker.com/r/marklagendijk/toogoodtogo-watcher)
+# node-toogoodtogo-watcher [![GitHub license](https://img.shields.io/github/license/YoueG/node-toogoodtogo-watcher)](https://github.com/YoueG/node-toogoodtogo-watcher/blob/master/LICENSE) [![npm](https://img.shields.io/npm/v/toogoodtogo-watcher-fork)](https://www.npmjs.com/package/toogoodtogo-watcher-fork) [![Docker Pulls](https://img.shields.io/docker/pulls/youedh/toogoodtogo-watcher-fork)](https://hub.docker.com/r/youedh/toogoodtogo-watcher-fork)
 
 Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notifications are shown when the stock of any of the businesses changes. The following notification types are supported:
 
@@ -66,18 +66,20 @@ By default Windows doesn't display the notifications in the notification center.
 Note: You can add multiple events to `webhookEvents`
 
 ## Docker
+
 Note: the Docker image is a multiarch image. So it will also work on Raspberry Pi's.
 
 ### Docker run
-1. Create a directory to store the config file and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) into `YOUR_FOLDER/config.json`. See above for instructions on how to configure the application. Make sure that the folder has the correct permissions, e.g. run chmod -R o+rwx config/ or you might get access denied errors on the file system. The app needs read/write access on the configuration file, e.g. to store token received in it.
+
+1. Create a directory to store the config file and copy the [config.defaults.json](https://github.com/YoueG/node-toogoodtogo-watcher/blob/master/config.defaults.json) into `YOUR_FOLDER/config.json`. See above for instructions on how to configure the application. Make sure that the folder has the correct permissions, e.g. run chmod -R o+rwx config/ or you might get access denied errors on the file system. The app needs read/write access on the configuration file, e.g. to store token received in it.
 2. Run the following command. Example: a user `john` who stored the config in `~/docker/toogoodtogo-watcher/config.json`:
 
 ```
 docker run \
  --name toogoodtogo-watcher \
  -e TZ=Europe/Amsterdam \
- -v /home/john/docker/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
- marklagendijk/toogoodtogo-watcher
+ -v /home/john/docker/toogoodtogo-watcher-fork:/home/node/.config/toogoodtogo-watcher-nodejs \
+ youedh/toogoodtogo-watcher-fork
 ```
 
 Note: When using Gotify as notification, make sure to put them on the same network in docker if hosted on the same docker host, e.g.
@@ -86,23 +88,24 @@ and use "--network=gotify" on both containers
 You can then use "http://gotify" on this container if --name gotify is used for the gotify container
 
 ### Docker Compose
+
 1. Create a directory to contain all your Docker Compose things.
-2. Create a directory `toogoodtogo-watcher` inside the created directory, and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
+2. Create a directory `toogoodtogo-watcher` inside the created directory, and copy the [config.defaults.json](https://github.com/YoueG/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
 3. Create a file `docker-compose.yaml`:
 
 ```yaml
 version: "3"
 services:
   toogoodtogo-watcher:
-    image: marklagendijk/toogoodtogo-watcher
+    image: youedh/toogoodtogo-watcher-fork
     restart: unless-stopped
     environment:
       - TZ=Europe/Amsterdam
     volumes:
-      - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
+      - ./toogoodtogo-watcher-fork:/home/node/.config/toogoodtogo-watcher-nodejs
 ```
 
 ## Running with Heroku
 
 1. Install the Heroku CLI and login.
-2. From your terminal, run ```heroku config:set TOOGOODTOGO_CONFIG=content```, replacing content with the content of your config.json file.
+2. From your terminal, run `heroku config:set TOOGOODTOGO_CONFIG=content`, replacing content with the content of your config.json file.

@@ -1,24 +1,25 @@
 {
-  "name": "toogoodtogo-watcher",
+  "name": "toogoodtogo-watcher-fork",
   "version": "3.6.0",
-  "description": "Node.js cli tool for monitoring your favorite TooGoodToGo businesses.",
+  "description": "Fork of marklagendijk/toogoodtogo-watcher, with fixes and gotify support",
   "main": "index.js",
   "keywords": [
     "TooGoodToGo",
     "notifications",
     "desktop",
-    "telegram"
+    "telegram",
+    "gotify"
   ],
-  "author": "Mark Lagendijk <mark@lagendijk.nl>",
+  "author": "Youe Graillot <youe.graillot@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marklagendijk/node-toogoodtogo-watcher.git"
+    "url": "git+https://github.com/YoueG/node-toogoodtogo-watcher.git"
   },
   "bugs": {
-    "url": "https://github.com/marklagendijk/node-toogoodtogo-watcher/issues"
+    "url": "https://github.com/YoueG/node-toogoodtogo-watcher/issues"
   },
-  "homepage": "https://github.com/marklagendijk/node-toogoodtogo-watcher#readme",
+  "homepage": "https://github.com/YoueG/node-toogoodtogo-watcher#readme",
   "preferGlobal": true,
   "bin": {
     "toogoodtogo-watcher": "index.js"
