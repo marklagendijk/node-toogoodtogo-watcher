@@ -31,7 +31,7 @@
     },
     "gotify": {
       "enabled": false,
-      "url": "http://push.example.de",
+      "url": "http://push.example.com",
       "apptoken": "token",
       "priority": 5
     }
