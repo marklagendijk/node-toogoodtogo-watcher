@@ -28,6 +28,12 @@
       "enabled": false,
       "webhookKey": "see README",
       "webhookEvents": ["see README"]
+    },
+    "gotify": {
+      "enabled": false,
+      "url": "http://push.example.com",
+      "apptoken": "token",
+      "priority": 5
     }
   },
   "messageFilter": {
