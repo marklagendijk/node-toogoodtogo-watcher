@@ -22,7 +22,9 @@
     "telegram": {
       "enabled": false,
       "botToken": "See README",
-      "chats": []
+      "chats": [],
+      "restricted": false,
+      "allowedChatIDs": []
     },
     "ifttt": {
       "enabled": false,
