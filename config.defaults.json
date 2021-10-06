@@ -27,13 +27,21 @@
     "ifttt": {
       "enabled": false,
       "webhookKey": "see README",
-      "webhookEvents": ["see README"]
+      "webhookEvents": [
+        "see README"
+      ]
     },
     "gotify": {
       "enabled": false,
       "url": "http://push.example.com",
       "apptoken": "token",
       "priority": 5
+    },
+    "mqtt": {
+      "enabled": false,
+      "host": "mosquitto",
+      "port": 1883,
+      "topic": "TooGoodToGo"
     }
   },
   "messageFilter": {
