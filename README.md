@@ -11,7 +11,7 @@ See [below for Docker usage](#docker).
 
 ## Installation
 
-1. Install Node.js 8.x or higher ([Windows](https://nodejs.org/en/download/current/) | [Linux](https://github.com/nodesource/distributions#debinstall) | [OSx](https://nodejs.org/en/download/current/)).
+1. Install Node.js 14.x or higher ([Windows](https://nodejs.org/en/download/current/) | [Linux](https://github.com/nodesource/distributions#debinstall) | [OSx](https://nodejs.org/en/download/current/)).
 2. `npm install -g toogoodtogo-watcher`
 3. `toogoodtogo-watcher config`. Fill in your TooGoodToGo account details. Optionally enable / disable certain notifications. See [Configuring Telegram notifiations](#configuring-telegram-notifiations) for instructions on setting up the Telegram notifications.
 4. `toogoodtogo-watcher watch`
@@ -66,9 +66,11 @@ By default Windows doesn't display the notifications in the notification center.
 Note: You can add multiple events to `webhookEvents`
 
 ## Docker
+
 Note: the Docker image is a multiarch image. So it will also work on Raspberry Pi's.
 
 ### Docker run
+
 1. Create a directory to store the config file and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) into `YOUR_FOLDER/config.json`. See above for instructions on how to configure the application. Make sure that the folder has the correct permissions, e.g. run chmod -R o+rwx config/ or you might get access denied errors on the file system. The app needs read/write access on the configuration file, e.g. to store token received in it.
 2. Run the following command. Example: a user `john` who stored the config in `~/docker/toogoodtogo-watcher/config.json`:
 
@@ -86,6 +88,7 @@ and use "--network=gotify" on both containers
 You can then use "http://gotify" on this container if --name gotify is used for the gotify container
 
 ### Docker Compose
+
 1. Create a directory to contain all your Docker Compose things.
 2. Create a directory `toogoodtogo-watcher` inside the created directory, and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
 3. Create a file `docker-compose.yaml`:
@@ -105,4 +108,4 @@ services:
 ## Running with Heroku
 
 1. Install the Heroku CLI and login.
-2. From your terminal, run ```heroku config:set TOOGOODTOGO_CONFIG=content```, replacing content with the content of your config.json file.
+2. From your terminal, run `heroku config:set TOOGOODTOGO_CONFIG=content`, replacing content with the content of your config.json file.
