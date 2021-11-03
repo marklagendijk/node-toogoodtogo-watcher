@@ -35,7 +35,8 @@
     "yargs": "^17.2.1"
   },
   "scripts": {
-    "lint": "prettier --write . && eslint --cache --fix ."
+    "lint": "prettier --write . && eslint --cache --fix .",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "eslint": "^8.1.0",
