@@ -89,21 +89,27 @@ You can then use "http://gotify" on this container if --name gotify is used for 
 
 ### Docker Compose
 
-1. Create a directory to contain all your Docker Compose things.
-2. Create a directory `toogoodtogo-watcher` inside the created directory, and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
-3. Create a file `docker-compose.yaml`:
-
-```yaml
-version: "3"
-services:
-  toogoodtogo-watcher:
-    image: marklagendijk/toogoodtogo-watcher
-    restart: unless-stopped
-    environment:
-      - TZ=Europe/Amsterdam
-    volumes:
-      - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
-```
+1. Create the following directory structure.
+   ```
+   my-docker-compose-stuff
+   │   docker-compose.yaml
+   │
+   └───toogoodtogo-watcher
+       │   config.json
+   ```
+2. Copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
+3. Create a file `docker-compose.yaml`
+   ```yaml
+   version: "3"
+   services:
+     toogoodtogo-watcher:
+       image: marklagendijk/toogoodtogo-watcher
+       restart: unless-stopped
+       environment:
+         - TZ=Europe/Amsterdam
+       volumes:
+         - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
+   ```
 
 ## Running with Heroku
 
