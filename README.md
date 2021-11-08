@@ -53,7 +53,7 @@ By default Windows doesn't display the notifications in the notification center.
 
 ## Configuring Discord notifications
 
-1. Follow the "MAKING A WEBHOOK" instructions https://support.discord.com/hc/pl/articles/228383668-Intro-to-Webhooks
+1. Follow the "MAKING A WEBHOOK" instructions https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
 2. Copy the Webhook URL and enter it in the configuration via `toogoodtogo-watcher config`, and set `enabled` to `true`.
 
 ## Configure IFTTT integration
