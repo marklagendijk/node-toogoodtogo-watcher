@@ -6,6 +6,7 @@ Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notificati
 - Console output
 - Telegram chat message
 - Push message via Gotify
+- Discord chat message
 
 See [below for Docker usage](#docker).
 
@@ -49,6 +50,11 @@ By default Windows doesn't display the notifications in the notification center.
 5. Click the `t.me/BOTNAME` link from the `BotFather` chat message.
 6. Press `BEGIN`.
 7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which you configured. Multiple people can connect to the bot to get updates about these favorites.
+
+## Configuring Discord notifications
+
+1. Follow the "MAKING A WEBHOOK" instructions https://support.discord.com/hc/pl/articles/228383668-Intro-to-Webhooks
+2. Copy the Webhook URL and enter it in the configuration via `toogoodtogo-watcher config`, and set `enabled` to `true`.
 
 ## Configure IFTTT integration
 
