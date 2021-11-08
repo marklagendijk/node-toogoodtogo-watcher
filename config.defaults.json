@@ -37,7 +37,7 @@
     },
     "discord": {
       "enabled": false,
-      "webhook": "http://push.example.com"
+      "webhook": "https://discordapp.com/api/webhooks/XXX/XXX"
     }
   },
   "messageFilter": {
