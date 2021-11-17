@@ -29,6 +29,7 @@
     "got": "^11.8.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "node-notifier": "^10.0.0",
     "rxjs": "^7.4.0",
     "telegraf": "^3.39.0",
