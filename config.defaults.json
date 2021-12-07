@@ -1,9 +1,11 @@
 {
   "api": {
+    "credentials": {
+      "email": "Email of your TooGoodToGo account."
+    },
     "session": {},
     "deviceType": "IOS",
     "headers": {
-      "User-Agent": "TooGoodToGo/21.9.0 (813) (iPhone/iPhone 7 (GSM); iOS 15.1; Scale/2.00)"
     },
     "pollingIntervalInMs": 30000,
     "authenticationIntervalInMS": 3600000
@@ -12,6 +14,9 @@
     "console": {
       "enabled": false,
       "clear": true
+    },
+    "desktop": {
+      "enabled": false
     },
     "telegram": {
       "enabled": true,
