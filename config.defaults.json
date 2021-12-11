@@ -1,8 +1,7 @@
 {
   "api": {
     "credentials": {
-      "email": "Email of your TooGoodToGo account.",
-      "password": "Password of your TooGoodToGo account."
+      "email": "Email of your TooGoodToGo account."
     },
     "session": {},
     "deviceType": "IOS",
