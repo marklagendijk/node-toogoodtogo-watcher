@@ -26,7 +26,7 @@ Commands:
   config        Edit the config file.
   config-reset  Reset the config to the default values.
   config-path   Show the path of the config file.
-  login         Request a login email.
+  login         Interactively login via a login email.
   watch         Watch your favourite busininesses for changes.
 
 Options:
