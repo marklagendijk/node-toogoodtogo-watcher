@@ -43,7 +43,7 @@ Options:
 6. Press `BEGIN`.
 7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which you configured. Multiple people can connect to the bot to get updates about these favorites.
 
-1. Create the following directory structure.
+
 2. Create a directory `toogoodtogo-watcher` inside the created directory, and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
    ```
 3. Create a file `docker-compose.yaml`:
@@ -51,29 +51,16 @@ Options:
 
 ### Docker Compose
 
+   
+   
+1. Create the following directory structure.
 
-   │   docker-compose.yaml
-```yaml
-   │
-version: "3"
-   └───toogoodtogo-watcher
-services:
-       │   config.json
-  toogoodtogo-watcher:
-   ```
-    image: marklagendijk/toogoodtogo-watcher
+
 2. Copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
-   restart: unless-stopped
 3. Create a file `docker-compose.yaml`
-   environment:
-   ```yaml
-      - TZ=Europe/Amsterdam
-   version: "3"
-    volumes:
-   services:
-      - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
-     toogoodtogo-watcher:
-```
+
+     ```yaml
+       version: "3"
        image: marklagendijk/toogoodtogo-watcher
        restart: unless-stopped
        environment:
@@ -82,13 +69,13 @@ services:
          - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
    ```
 
+
 ## Heroku integration
 
 Create a new app and set these Config Vars (in App > Settings):
 
 - TELEGRAM_BOT_TOKEN
 - TGTG_EMAIL
-- TGTG_PASSWORD
 
 ### Test locally
 
