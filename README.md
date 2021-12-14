@@ -54,10 +54,16 @@ Options:
    
    
 1. Create the following directory structure.
+    ```
+      my-docker-compose-stuff
+      │   docker-compose.yaml
+      │
+      └───toogoodtogo-watcher
+      │   config.json
+    ```
 
-
-2. Copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
-3. Create a file `docker-compose.yaml`
+4. Copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
+5. Create a file `docker-compose.yaml`
 
      ```yaml
        version: "3"
