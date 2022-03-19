@@ -41,7 +41,7 @@ jobs:
 
       # https://github.com/docker/build-push-action#multi-platform-image
       - name: Build and push to Docker Hub
-        uses: docker/build-push-action@v2.7.0
+        uses: docker/build-push-action@v2.10.0
         with:
           context: .
           file: Dockerfile
