@@ -32,6 +32,7 @@
     "node-notifier": "^10.0.0",
     "rxjs": "^7.4.0",
     "telegraf": "^4.4.2",
+    "tough-cookie": "^4.0.0",
     "yargs": "^17.2.1"
   },
   "scripts": {
