@@ -1,9 +1,8 @@
-FROM node:14
+FROM node:14-alpine
 WORKDIR /home/node/app
-COPY package*.json ./
-RUN npm ci --production
 COPY . .
-RUN mkdir -p /home/node/.config/toogoodtogo-watcher-nodejs && \
+RUN npm ci --production && \
+    mkdir -p /home/node/.config/toogoodtogo-watcher-nodejs && \
     chown -R node:node /home/node/
 USER node
 VOLUME /home/node/.config/toogoodtogo-watcher-nodejs
