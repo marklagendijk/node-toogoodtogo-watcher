@@ -67,6 +67,17 @@ By default Windows doesn't display the notifications in the notification center.
 
 Note: You can add multiple events to `webhookEvents`
 
+## Configure Discord integration
+
+1. Go to Discord Server
+2. Click on the gear icon next to channels you want `Edit Channel`
+3. Head to `Integrations`
+4. Click on `Create Webhook`
+5. Click on `Copy Webhook URL` to copy webhook url into the clipboard
+7. Update the `discord` configuration via `toogoodtogo-watcher config`:
+   - set `enabled` to `true`
+   - set `webhook_url` to the url copied in step 5
+
 ## Docker
 
 Note: the Docker image is a multiarch image. So it will also work on Raspberry Pi's.

@@ -28,6 +28,10 @@
       "webhookKey": "see README",
       "webhookEvents": ["see README"]
     },
+    "discord": {
+      "enabled": true,
+      "webhook_url": "See README"
+    },
     "gotify": {
       "enabled": false,
       "url": "http://push.example.com",
