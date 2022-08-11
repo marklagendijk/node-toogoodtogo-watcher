@@ -2,7 +2,7 @@
 const notifier = require("./lib/notifier");
 const { consoleLogin } = require("./lib/console-login");
 const { pollFavoriteBusinesses$ } = require("./lib/poller");
-const { editConfig, resetConfig, configPath, config } = require("./lib/config");
+const { editConfig, resetConfig, configPath, config, injectOSEnvToConfig } = require("./lib/config");
 
 const argv = require("yargs")
   .usage("Usage: toogoodtogo-watcher <command>")
@@ -33,6 +33,10 @@ switch (argv._[0]) {
 
   case "config-reset":
     resetConfig();
+    break;
+
+  case "config-os-var":
+    injectOSEnvToConfig();
     break;
 
   case "config-path":
