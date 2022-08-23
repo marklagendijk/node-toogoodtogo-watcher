@@ -20,7 +20,7 @@ jobs:
       # https://github.com/booxmedialtd/ws-action-parse-semver
       - name: Parse version
         id: semver-version
-        uses: booxmedialtd/ws-action-parse-semver@v1.4.0
+        uses: booxmedialtd/ws-action-parse-semver@v1.4.5
         with:
           input_string: ${{ steps.package-version.outputs.current-version}}
 
