@@ -73,16 +73,17 @@ Note: the Docker image is a multiarch image. So it will also work on Raspberry P
 
 ### Docker run
 
-1. Create a directory to store the config file and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) into `YOUR_FOLDER/config.json`. See above for instructions on how to configure the application. Make sure that the folder has the correct permissions, e.g. run chmod -R o+rwx config/ or you might get access denied errors on the file system. The app needs read/write access on the configuration file, e.g. to store token received in it.
-2. Run the following command. Example: a user `john` who stored the config in `~/docker/toogoodtogo-watcher/config.json`:
+1. Download the config.json file and store it [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) into your current directory. The `-v $(pwd)` in docker run means "current directory". See above for instructions on how to configure the application. Make sure that the folder has the correct permissions, e.g. run chmod -R o+rwx config/ or you might get access denied errors on the file system. The app needs read/write access on the configuration file, e.g. to store token received in it.
+2. Run the following command to login initially.
 
 ```
-docker run \
+docker run  -it \
  --name toogoodtogo-watcher \
  -e TZ=Europe/Amsterdam \
- -v /home/john/docker/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
+ -v $(pwd):/home/node/.config/toogoodtogo-watcher-nodejs \
  marklagendijk/toogoodtogo-watcher
 ```
+3. Press `stg + c` to stop the container after loggin in and start the container now with the stored credentials with the same command shown above.
 
 Note: When using Gotify as notification, make sure to put them on the same network in docker if hosted on the same docker host, e.g.
 docker network create gotify
