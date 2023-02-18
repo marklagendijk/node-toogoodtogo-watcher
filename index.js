@@ -1,10 +1,13 @@
 #!/usr/bin/env node
-const notifier = require("./lib/notifier");
-const { consoleLogin } = require("./lib/console-login");
-const { pollFavoriteBusinesses$ } = require("./lib/poller");
-const { editConfig, resetConfig, configPath, config } = require("./lib/config");
+import { hasListeners$, notifyIfChanged } from "./lib/notifier.js";
+import { consoleLogin } from "./lib/console-login.js";
+import { pollFavoriteBusinesses$ } from "./lib/poller.js";
+import { editConfig, resetConfig, configPath, config } from "./lib/config.js";
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
+import { createTelegramBot } from "./lib/telegram-bot.js";
 
-const argv = require("yargs")
+const argv = yargs(hideBin(process.argv))
   .usage("Usage: toogoodtogo-watcher <command>")
   .env("TOOGOODTOGO")
   .command("config", "Edit the config file.")
@@ -43,7 +46,7 @@ switch (argv._[0]) {
     if (argv.email) {
       config.set("api.credentials.email", argv.email);
     }
-    consoleLogin();
+    await consoleLogin();
     break;
 
   case "watch":
@@ -52,9 +55,10 @@ switch (argv._[0]) {
       config.set(customConfig);
     }
 
-    pollFavoriteBusinesses$(notifier.hasListeners$()).subscribe(
-      (businesses) => notifier.notifyIfChanged(businesses),
-      console.error
-    );
+    await createTelegramBot();
+    pollFavoriteBusinesses$(hasListeners$()).subscribe({
+      next: (businesses) => notifyIfChanged(businesses),
+      error: console.error,
+    });
     break;
 }
