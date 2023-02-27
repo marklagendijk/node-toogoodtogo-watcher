@@ -27,12 +27,12 @@
   "dependencies": {
     "conf": "^11.0.1",
     "editor": "^1.0.0",
-    "got": "^11.8.2",
+    "got": "^12.5.3",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "node-notifier": "^10.0.1",
     "rxjs": "^7.8.0",
-    "telegraf": "^4.4.2",
+    "telegraf": "^4.11.2",
     "tough-cookie": "^4.1.2",
     "yargs": "^17.7.1"
   },

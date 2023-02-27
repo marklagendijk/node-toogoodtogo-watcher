@@ -11,7 +11,7 @@ See [below for Docker usage](#docker).
 
 ## Installation
 
-1. Install Node.js 14.x or higher ([Windows](https://nodejs.org/en/download/current/) | [Linux](https://github.com/nodesource/distributions#debinstall) | [OSx](https://nodejs.org/en/download/current/)).
+1. Install Node.js 18.x or higher ([Windows](https://nodejs.org/en/download/current/) | [Linux](https://github.com/nodesource/distributions#debinstall) | [OSx](https://nodejs.org/en/download/current/)).
 2. `npm install -g toogoodtogo-watcher`
 3. `toogoodtogo-watcher config`. Fill in your TooGoodToGo account details. Optionally enable / disable certain notifications. See [Configuring Telegram notifiations](#configuring-telegram-notifications) for instructions on setting up the Telegram notifications.
 4. `toogoodtogo-watcher login`. Click the link in the login email (on PC, not on phone).
