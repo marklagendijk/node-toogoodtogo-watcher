@@ -8,4 +8,5 @@ RUN mkdir -p /home/node/.config/toogoodtogo-watcher-nodejs && \
     chown -R node:node /home/node/
 USER node
 VOLUME /home/node/.config/toogoodtogo-watcher-nodejs
-CMD [ "node", "index.js", "watch" ]
+ENTRYPOINT [ "node", "index.js" ]
+CMD ["watch"]

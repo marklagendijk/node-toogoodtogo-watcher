@@ -81,7 +81,7 @@ docker run \
  --name toogoodtogo-watcher \
  -e TZ=Europe/Amsterdam \
  -v /home/john/docker/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
- marklagendijk/toogoodtogo-watcher
+ marklagendijk/toogoodtogo-watcher watch
 ```
 
 Note: When using Gotify as notification, make sure to put them on the same network in docker if hosted on the same docker host, e.g.
