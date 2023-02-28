@@ -13,7 +13,7 @@ See [below for Docker usage](#docker).
 
 1. Install Node.js 18.x or higher ([Windows](https://nodejs.org/en/download/current/) | [Linux](https://github.com/nodesource/distributions#debinstall) | [OSx](https://nodejs.org/en/download/current/)).
 2. `npm install -g toogoodtogo-watcher`
-3. `toogoodtogo-watcher config`. Fill in your TooGoodToGo account details. Optionally enable / disable certain notifications. See [Configuring Telegram notifiations](#configuring-telegram-notifications) for instructions on setting up the Telegram notifications.
+3. `toogoodtogo-watcher config`. Fill in your TooGoodToGo account email. Optionally enable / disable certain notifications. See [Configuring Telegram notifiations](#configuring-telegram-notifications) for instructions on setting up the Telegram notifications.
 4. `toogoodtogo-watcher login`. Click the link in the login email (on PC, not on phone).
 5. `toogoodtogo-watcher watch`
 
@@ -74,13 +74,24 @@ Note: the Docker image is a multiarch image. So it will also work on Raspberry P
 ### Docker run
 
 1. Create a directory to store the config file and copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) into `YOUR_FOLDER/config.json`. See above for instructions on how to configure the application. Make sure that the folder has the correct permissions, e.g. run chmod -R o+rwx config/ or you might get access denied errors on the file system. The app needs read/write access on the configuration file, e.g. to store token received in it.
-2. Run the following command. Example: a user `john` who stored the config in `~/docker/toogoodtogo-watcher/config.json`:
+2. Run the following command to login, using the configured email address. Example: a user `john` who stored the config in `~/toogoodtogo-watcher/config.json`:
 
 ```
 docker run \
  --name toogoodtogo-watcher \
+ --rm \
+ -v /home/john/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
+ marklagendijk/toogoodtogo-watcher login
+```
+
+3. Run the following command to start watching.
+
+```
+docker run \
+ --name toogoodtogo-watcher \
+ --rm \
  -e TZ=Europe/Amsterdam \
- -v /home/john/docker/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
+ -v /home/john/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
  marklagendijk/toogoodtogo-watcher watch
 ```
 
@@ -100,7 +111,8 @@ You can then use "http://gotify" on this container if --name gotify is used for 
        │   config.json
    ```
 2. Copy the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json) to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
-3. Create a file `docker-compose.yaml`
+3. Use the command as explained under 'Docker run' above to login using the configured email address.
+4. Create a file `docker-compose.yaml`
    ```yaml
    version: "3"
    services:
