@@ -15,10 +15,9 @@ See [below for Docker usage](#docker).
 1. Install Node.js 18.x or higher ([Windows](https://nodejs.org/en/download/current/)
    | [Linux](https://github.com/nodesource/distributions#debinstall) | [OSx](https://nodejs.org/en/download/current/)).
 2. `npm install -g toogoodtogo-watcher`
-3. `toogoodtogo-watcher config`. Fill in your TooGoodToGo account email. Optionally enable / disable certain
-   notifications. See [Configuring Telegram notifiations](#configuring-telegram-notifications) for instructions on
+3. `toogoodtogo-watcher config`. Optionally enable / disable certain notifications. See [Configuring Telegram notifications](#configuring-telegram-notifications) for instructions on
    setting up the Telegram notifications.
-4. `toogoodtogo-watcher login`. Click the link in the login email (on PC, not on phone).
+4. `toogoodtogo-watcher login --email mail@example.com`. Click the link in the login email (on PC, not on phone).
 5. `toogoodtogo-watcher watch`
 
 ## CLI documentation
@@ -94,7 +93,7 @@ docker run \
  --name toogoodtogo-watcher \
  --rm \
  -v /home/john/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
- marklagendijk/toogoodtogo-watcher login
+ marklagendijk/toogoodtogo-watcher login --email email@example.com
 ```
 
 3. Run the following command to start watching.
@@ -138,9 +137,3 @@ use "http://gotify" on this container if --name gotify is used for the gotify co
        volumes:
          - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
    ```
-
-## Running with Heroku
-
-1. Install the Heroku CLI and login.
-2. From your terminal, run `heroku config:set TOOGOODTOGO_CONFIG=content`, replacing content with the content of your
-   config.json file.

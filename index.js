@@ -16,8 +16,8 @@ const argv = yargs(hideBin(process.argv))
   .command("login", "Interactively login via a login email.", {
     email: {
       type: "string",
-      describe:
-        "The email address to login with. If not specified the configured email address will be used.",
+      demandOption: true,
+      describe: "The email address to login with.",
     },
   })
   .command("watch", "Watch your favourite businesses for changes.", {
@@ -43,9 +43,7 @@ switch (argv._[0]) {
     break;
 
   case "login":
-    if (argv.email) {
-      config.set("api.credentials.email", argv.email);
-    }
+    config.set("api.credentials.email", argv.email);
     await consoleLogin();
     break;
 
