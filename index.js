@@ -1,11 +1,14 @@
 #!/usr/bin/env node
-import { hasListeners$, notifyIfChanged } from "./lib/notifier.js";
+import {
+  hasListeners$,
+  notifyIfChanged,
+} from "./lib/notifications/notifier.js";
 import { consoleLogin } from "./lib/console-login.js";
 import { pollFavoriteBusinesses$ } from "./lib/poller.js";
 import { editConfig, resetConfig, configPath, config } from "./lib/config.js";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { createTelegramBot } from "./lib/telegram-bot.js";
+import { createTelegramBot } from "./lib/notifications/telegram-bot.js";
 
 const argv = yargs(hideBin(process.argv))
   .usage("Usage: toogoodtogo-watcher <command>")

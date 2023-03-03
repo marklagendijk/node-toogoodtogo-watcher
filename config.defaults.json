@@ -23,16 +23,15 @@
       "botToken": "See README",
       "chats": []
     },
-    "ifttt": {
+    "apprise": {
       "enabled": false,
-      "webhookKey": "see README",
-      "webhookEvents": ["see README"]
-    },
-    "gotify": {
-      "enabled": false,
-      "url": "http://push.example.com",
-      "apptoken": "token",
-      "priority": 5
+      "host": "apprise:8000",
+      "services": [
+        {
+          "url": "Any Apprise Notification service URL. Example: mailto://domain.com?user=userid&pass=password. See https://github.com/caronc/apprise#table-of-contents",
+          "format": "The message format, as supported by this notification service. Can be `html`, `markdown or text"
+        }
+      ]
     }
   },
   "messageFilter": {
