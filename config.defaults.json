@@ -25,7 +25,7 @@
     },
     "apprise": {
       "enabled": false,
-      "host": "apprise:8000",
+      "host": "apprise:8080",
       "services": [
         {
           "url": "Any Apprise Notification service URL. Example: mailto://domain.com?user=userid&pass=password. See https://github.com/caronc/apprise#table-of-contents",
