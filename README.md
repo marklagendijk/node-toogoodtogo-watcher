@@ -6,7 +6,7 @@ the businesses changes. The following notification types are supported:
 - Desktop notification
 - Console output
 - Telegram chat message
-- Push message via Gotify
+- All the notification services that [Apprise](https://github.com/caronc/apprise) supports (WIP).
 
 See [below for Docker usage](#docker).
 
@@ -57,22 +57,6 @@ following steps.
 7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which
    you configured. Multiple people can connect to the bot to get updates about these favorites.
 
-## Configure IFTTT integration
-
-1. Go to [https://ifttt.com/create/](https://ifttt.com/create/).
-2. Click on `this` and select **Webhooks**.
-3. Fill in an **Event Name** (e.g. `too_good_to_go_updated`).
-4. Click on `that`.
-5. Select anything you'd like to integrate with (e.g. Philips Hue).
-6. Finish setting it up. Note: `value1` contains a plain text message, `value2` contains an HTML message.
-7. Update the `ifttt` configuration via `toogoodtogo-watcher config`:
-    - set `enabled` to `true`
-    - set `webhookKey` to the token found at [Web Hook settings](https://ifttt.com/services/maker_webhooks/settings) (
-      last part of the URL)
-    - add the **Event Name** selected in step 3 to the `webhookEvents` array
-
-Note: You can add multiple events to `webhookEvents`
-
 ## Docker
 
 Note: the Docker image is a multiarch image. So it will also work on Raspberry Pi's.
@@ -106,10 +90,6 @@ docker run \
  -v /home/john/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
  marklagendijk/toogoodtogo-watcher watch
 ```
-
-Note: When using Gotify as notification, make sure to put them on the same network in docker if hosted on the same
-docker host, e.g. docker network create gotify and use "--network=gotify" on both containers You can then
-use "http://gotify" on this container if --name gotify is used for the gotify container
 
 ### Docker Compose
 
