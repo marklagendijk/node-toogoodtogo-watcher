@@ -29,7 +29,7 @@
       "services": [
         {
           "url": "Any Apprise Notification service URL. Example: mailto://domain.com?user=userid&pass=password. See https://github.com/caronc/apprise#table-of-contents",
-          "format": "The message format, as supported by this notification service. Can be `html`, `markdown or text"
+          "format": "The message format, as supported by this notification service. Can be `html`, `text`"
         }
       ]
     }
