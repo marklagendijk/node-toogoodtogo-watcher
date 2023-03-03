@@ -89,7 +89,7 @@ Note: the Docker image is a multiarch image. So it will also work on Raspberry P
 
 ```
 docker run \
- -i
+ -i \
  --name toogoodtogo-watcher \
  --rm \
  -v /home/john/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
