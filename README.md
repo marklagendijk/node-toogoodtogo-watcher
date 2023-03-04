@@ -135,7 +135,7 @@ docker run \
      # This will make Apprise reachable on apprise:8080 for the other Docker Compose containers
      apprise:
        image: caronc/apprise:latest
-# Enable these to make Apprise reachable from outside Docker
-#      ports: 
-#         - "8080:8080"
+     # Enable these to make Apprise reachable from outside Docker
+     # ports: 
+     #   - "8080:8080"
    ```
