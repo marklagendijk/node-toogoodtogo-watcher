@@ -3,10 +3,10 @@
 Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notifications are shown when the stock of any of
 the businesses changes. The following notification types are supported:
 
+- Interactive Telegram bot
+- All the notification services that [Apprise](https://github.com/caronc/apprise) supports (WIP, see [#215](https://github.com/marklagendijk/node-toogoodtogo-watcher/issues/215)).
 - Desktop notification
 - Console output
-- Telegram chat message
-- All the notification services that [Apprise](https://github.com/caronc/apprise) supports (WIP).
 
 See [below for Docker usage](#docker).
 
@@ -37,16 +37,21 @@ Options:
   --version  Show version number                                       [boolean]
 ```
 
-## Displaying the notifications in the Windows notification center
+## Configuring Apprise notifications
+[Apprise](https://github.com/caronc/apprise) is software for sending notifications. It supports many services.
 
-By default Windows doesn't display the notifications in the notification center. You can enable this by doing the
-following steps.
+### Running
+The easiest way to run the watcher together with Apprise is to use the Docker Compose setup, specified below.
 
-1. Go to 'notifications & actions settings' (`Windows key`, type 'notifications', `enter`)
-2. Click on the 'toast' app at the bottom of the screen.
-3. Enable the 'show in action center' checkbox.
+### Configuration
 
-## Configuring Telegram notifications
+1. Find your notification service and read the Apprise documentation for that service.
+2. Follow any prerequisite steps as specified in the documentation.
+3. Create an 'url' in the format specified in the documentation.
+4. Add the url to the "apprise.services" section and specify the 'format'.
+
+
+## Configuring the interactive Telegram bot
 
 1. Open a Telegram chat with `BotFather`.
 2. Follow the instructions to create your own bot.
@@ -56,6 +61,16 @@ following steps.
 6. Press `BEGIN`.
 7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which
    you configured. Multiple people can connect to the bot to get updates about these favorites.
+
+
+## Displaying the notifications in the Windows notification center
+
+By default Windows doesn't display the notifications in the notification center. You can enable this by doing the
+following steps.
+
+1. Go to 'notifications & actions settings' (`Windows key`, type 'notifications', `enter`)
+2. Click on the 'toast' app at the bottom of the screen.
+3. Enable the 'show in action center' checkbox.
 
 ## Docker
 
@@ -76,7 +91,7 @@ docker run \
  -i \
  --name toogoodtogo-watcher \
  --rm \
- -v /home/john/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
+ -v ~/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
  marklagendijk/toogoodtogo-watcher login --email email@example.com
 ```
 
@@ -87,7 +102,7 @@ docker run \
  --name toogoodtogo-watcher \
  --rm \
  -e TZ=Europe/Amsterdam \
- -v /home/john/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
+ -v ~/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
  marklagendijk/toogoodtogo-watcher watch
 ```
 
@@ -116,4 +131,11 @@ docker run \
          - TZ=Europe/Amsterdam
        volumes:
          - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
+     
+     # This will make Apprise reachable on apprise:8080 for the other Docker Compose containers
+     apprise:
+       image: caronc/apprise:latest
+# Enable these to make Apprise reachable from outside Docker
+#      ports: 
+#         - "8080:8080"
    ```
