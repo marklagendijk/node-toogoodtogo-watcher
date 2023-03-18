@@ -32,6 +32,10 @@
           "format": "The message format, as supported by this notification service. Can be `html`, `text`"
         }
       ]
+    },
+    "pushsafer": {
+      "enabled": false,
+      "apiKey": "See README"
     }
   },
   "messageFilter": {

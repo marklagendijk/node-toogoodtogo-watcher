@@ -5,6 +5,7 @@ the businesses changes. The following notification types are supported:
 
 - Interactive Telegram bot
 - All the notification services that [Apprise](https://github.com/caronc/apprise) supports (WIP, see [#215](https://github.com/marklagendijk/node-toogoodtogo-watcher/issues/215)).
+- All the notification services that [Pushsafer](https://pushsafer.com) supports
 - Desktop notification
 - Console output
 
@@ -22,7 +23,7 @@ See [below for Docker usage](#docker).
 
 ## CLI documentation
 
-```
+```sh
 Usage: toogoodtogo-watcher <command>
 
 Commands:
@@ -38,9 +39,11 @@ Options:
 ```
 
 ## Configuring Apprise notifications
+
 [Apprise](https://github.com/caronc/apprise) is software for sending notifications. It supports many services.
 
 ### Running
+
 The easiest way to run the watcher together with Apprise is to use the Docker Compose setup, specified below.
 
 ### Configuration
@@ -49,7 +52,6 @@ The easiest way to run the watcher together with Apprise is to use the Docker Co
 2. Follow any prerequisite steps as specified in the documentation.
 3. Create an 'url' in the format specified in the documentation.
 4. Add the url to the "apprise.services" section and specify the 'format'.
-
 
 ## Configuring the interactive Telegram bot
 
@@ -61,7 +63,6 @@ The easiest way to run the watcher together with Apprise is to use the Docker Co
 6. Press `BEGIN`.
 7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which
    you configured. Multiple people can connect to the bot to get updates about these favorites.
-
 
 ## Displaying the notifications in the Windows notification center
 
@@ -86,41 +87,44 @@ Note: the Docker image is a multiarch image. So it will also work on Raspberry P
 2. Run the following command to login, using the configured email address. Example: a user `john` who stored the config
    in `~/toogoodtogo-watcher/config.json`:
 
-```
-docker run \
- -i \
- --name toogoodtogo-watcher \
- --rm \
- -v ~/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
- marklagendijk/toogoodtogo-watcher login --email email@example.com
-```
+   ```sh
+   docker run \
+   -i \
+   --name toogoodtogo-watcher \
+   --rm \
+   -v ~/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
+   marklagendijk/toogoodtogo-watcher login --email email@example.com
+   ```
 
 3. Run the following command to start watching.
 
-```
-docker run \
- --name toogoodtogo-watcher \
- --rm \
- -e TZ=Europe/Amsterdam \
- -v ~/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
- marklagendijk/toogoodtogo-watcher watch
-```
+   ```sh
+   docker run \
+   --name toogoodtogo-watcher \
+   --rm \
+   -e TZ=Europe/Amsterdam \
+   -v ~/toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs \
+   marklagendijk/toogoodtogo-watcher watch
+   ```
 
 ### Docker Compose
 
 1. Create the following directory structure.
-   ```
+
+   ```sh
    my-docker-compose-stuff
    │   docker-compose.yaml
    │
    └───toogoodtogo-watcher
        │   config.json
    ```
+
 2. Copy
    the [config.defaults.json](https://github.com/marklagendijk/node-toogoodtogo-watcher/blob/master/config.defaults.json)
    to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
 3. Use the command as explained under 'Docker run' above to login using the configured email address.
 4. Create a file `docker-compose.yaml`
+
    ```yaml
    version: "3"
    services:
@@ -131,11 +135,11 @@ docker run \
          - TZ=Europe/Amsterdam
        volumes:
          - ./toogoodtogo-watcher:/home/node/.config/toogoodtogo-watcher-nodejs
-     
+
      # This will make Apprise reachable on apprise:8080 for the other Docker Compose containers
      apprise:
        image: caronc/apprise:latest
      # Enable these to make Apprise reachable from outside Docker
-     # ports: 
+     # ports:
      #   - "8080:8080"
    ```
