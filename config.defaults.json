@@ -4,7 +4,6 @@
       "email": "Email of your TooGoodToGo account."
     },
     "session": {},
-    "deviceType": "IOS",
     "headers": {
     },
     "pollingIntervalInMs": 30000,
