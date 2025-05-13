@@ -5,7 +5,7 @@ import {
 } from "./lib/notifications/notifier.js";
 import { consoleLogin } from "./lib/console-login.js";
 import { pollFavoriteBusinesses$ } from "./lib/poller.js";
-import { editConfig, resetConfig, configPath, config } from "./lib/config.js";
+import { editConfig, resetConfig, configPath, config, initializeConfig } from "./lib/config.js";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import { createTelegramBot } from "./lib/notifications/telegram-bot.js";
@@ -30,7 +30,19 @@ const argv = yargs(hideBin(process.argv))
         "Custom config. Note: the config will be overwrite the current config file.",
     },
   })
+  .option("config-path", {
+    type: "string",
+    describe: "Path to the config file (e.g., '/path/to/config.json' or './config2.json'). If no extension is provided, '.json' will be used.",
+  })
   .demandCommand().argv;
+
+const envConfigPath = process.env.TOOGOODTOGO_CONFIG_PATH;
+const cliConfigPath = argv["config-path"];
+const configPathToUse = cliConfigPath || envConfigPath;
+
+if (configPathToUse) {
+  initializeConfig(configPathToUse);
+}
 
 switch (argv._[0]) {
   case "config":
