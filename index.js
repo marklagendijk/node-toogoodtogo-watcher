@@ -5,7 +5,7 @@ import {
 } from "./lib/notifications/notifier.js";
 import { consoleLogin } from "./lib/console-login.js";
 import { pollFavoriteBusinesses$ } from "./lib/poller.js";
-import { editConfig, resetConfig, configPath, config } from "./lib/config.js";
+import { openConfigEditor, resetConfig, configPath, setConfig, config } from "./lib/config.js";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import { createTelegramBot } from "./lib/notifications/telegram-bot.js";
@@ -13,7 +13,14 @@ import { createTelegramBot } from "./lib/notifications/telegram-bot.js";
 const argv = yargs(hideBin(process.argv))
   .usage("Usage: toogoodtogo-watcher <command>")
   .env("TOOGOODTOGO")
-  .command("config", "Edit the config file.")
+  .command("config", "Open the config file in your default editor.")
+  .command("config-set", "Set configuration options.", {
+    config: {
+      type: "string",
+      demandOption: true,
+      describe: "Configuration options to override, in json format. You can use (a subset of) config.defaults.json as template.",
+    }
+  })
   .command("config-reset", "Reset the config to the default values.")
   .command("config-path", "Show the path of the config file.")
   .command("login", "Interactively login via a login email.", {
@@ -26,15 +33,18 @@ const argv = yargs(hideBin(process.argv))
   .command("watch", "Watch your favourite businesses for changes.", {
     config: {
       type: "string",
-      describe:
-        "Custom config. Note: the config will be overwrite the current config file.",
+      describe: "Configuration options to override, in json format",
     },
   })
   .demandCommand().argv;
 
 switch (argv._[0]) {
   case "config":
-    editConfig();
+    openConfigEditor();
+    break;
+
+  case "config-set":
+    setConfig(JSON.parse(argv.config));
     break;
 
   case "config-reset":
@@ -52,8 +62,7 @@ switch (argv._[0]) {
 
   case "watch":
     if (argv.config) {
-      const customConfig = JSON.parse(argv.config);
-      config.set(customConfig);
+      setConfig(JSON.parse(argv.config));
     }
 
     await createTelegramBot();

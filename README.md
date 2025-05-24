@@ -26,11 +26,12 @@ See [below for Docker usage](#docker).
 Usage: toogoodtogo-watcher <command>
 
 Commands:
-  config        Edit the config file.
+  config        Open the config file in your default editor.
+  config-set    Set configuration options.
   config-reset  Reset the config to the default values.
   config-path   Show the path of the config file.
   login         Interactively login via a login email.
-  watch         Watch your favourite busininesses for changes.
+  watch         Watch your favourite businesses for changes.
 
 Options:
   --help     Show help                                                 [boolean]
