@@ -31,6 +31,7 @@
     "lodash": "^4.17.21",
     "moment": "^2.30.1",
     "node-notifier": "^10.0.1",
+    "proxy-agent": "^6.5.0",
     "rxjs": "^7.8.2",
     "telegraf": "^4.16.3",
     "tough-cookie": "^5.1.2",
