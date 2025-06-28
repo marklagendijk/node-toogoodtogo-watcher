@@ -4,7 +4,7 @@ Node.js cli tool for monitoring your favorite TooGoodToGo businesses. Notificati
 the businesses changes. The following notification types are supported:
 
 - Interactive Telegram bot
-- All the notification services that [Apprise](https://github.com/caronc/apprise) supports (WIP, see [#215](https://github.com/marklagendijk/node-toogoodtogo-watcher/issues/215)).
+- All the notification services that [Apprise](https://github.com/caronc/apprise) supports (See [#215](https://github.com/marklagendijk/node-toogoodtogo-watcher/issues/215)).
 - Desktop notification
 - Console output
 
@@ -15,7 +15,7 @@ See [below for Docker usage](#docker).
 1. Install Node.js 18.x or higher ([Windows](https://nodejs.org/en/download/current/)
    | [Linux](https://github.com/nodesource/distributions#debinstall) | [OSx](https://nodejs.org/en/download/current/)).
 2. `npm install -g toogoodtogo-watcher`
-3. `toogoodtogo-watcher config`. Optionally enable / disable certain notifications. See [Configuring Telegram notifications](#configuring-telegram-notifications) for instructions on
+3. `toogoodtogo-watcher config`. Optionally enable / disable certain notifications. See [Configuring the interactive Telegram bot](#configuring-the-interactive-telegram-bot) for instructions on
    setting up the Telegram notifications.
 4. `toogoodtogo-watcher login --email mail@example.com`. Click the link in the login email (on PC, not on phone).
 5. `toogoodtogo-watcher watch`
@@ -59,9 +59,9 @@ The easiest way to run the watcher together with Apprise is to use the Docker Co
 3. Copy the token and enter it in the configuration via `toogoodtogo-watcher config`, and set `enabled` to `true`.
 4. Start the application `toogoodtogo-watcher watch`
 5. Click the `t.me/BOTNAME` link from the `BotFather` chat message.
-6. Press `BEGIN`.
-7. Your bot should greet you, and show a notification about your favorites. Note: the bot will show the favorites which
-   you configured. Multiple people can connect to the bot to get updates about these favorites.
+6. Press `BEGIN`. Your bot should greet you.
+7. You can log in using the `/login` 'command'. E.g: `/login mail@example.com`.
+8. The bot will send you notifications about the shops that you selected as 'favourite' in the TGTG app. Note: Multiple people can connect to the bot to get updates about these favorites.
 
 
 ## Displaying the notifications in the Windows notification center
