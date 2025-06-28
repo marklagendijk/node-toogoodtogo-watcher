@@ -10,6 +10,10 @@ the businesses changes. The following notification types are supported:
 
 See [below for Docker usage](#docker).
 
+Also [available as HomeAssistant addon](https://github.com/marklagendijk/ha-toogoodtogo-watcher/)
+
+[![Open your Home Assistant instance and show the add add-on repository dialog with the repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmarklagendijk%2Fha-toogoodtogo-watcher)
+
 ## Installation
 
 1. Install Node.js 18.x or higher ([Windows](https://nodejs.org/en/download/current/)
