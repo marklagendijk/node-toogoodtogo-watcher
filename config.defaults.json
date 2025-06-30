@@ -1,5 +1,6 @@
 {
   "api": {
+    "appVersion": "25.6.1",
     "credentials": {
       "email": "Email of your TooGoodToGo account."
     },
