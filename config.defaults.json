@@ -23,6 +23,12 @@
       "botToken": "See README",
       "chats": []
     },
+    "mqtt": {
+      "enabled": true,
+      "host": "mqtt:1883",
+      "username": "",
+      "password": ""
+    },
     "apprise": {
       "enabled": false,
       "host": "apprise:8080",
