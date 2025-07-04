@@ -5,8 +5,7 @@
       "email": "Email of your TooGoodToGo account."
     },
     "session": {},
-    "headers": {
-    },
+    "headers": {},
     "pollingIntervalInMs": 30000,
     "authenticationIntervalInMS": 3600000
   },
@@ -25,7 +24,7 @@
     },
     "mqtt": {
       "enabled": true,
-      "host": "mqtt:1883",
+      "url": "mqtt://core-mosquitto:1883",
       "username": "",
       "password": ""
     },
