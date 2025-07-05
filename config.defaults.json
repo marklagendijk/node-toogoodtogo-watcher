@@ -23,7 +23,7 @@
       "chats": []
     },
     "mqtt": {
-      "enabled": true,
+      "enabled": false,
       "url": "mqtt://core-mosquitto:1883",
       "username": "",
       "password": ""
