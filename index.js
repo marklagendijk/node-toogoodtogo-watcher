@@ -5,7 +5,13 @@ import {
 } from "./lib/notifications/notifier.js";
 import { consoleLogin } from "./lib/console-login.js";
 import { pollFavoriteBusinesses$ } from "./lib/poller.js";
-import { openConfigEditor, resetConfig, configPath, setConfig, config } from "./lib/config.js";
+import {
+  openConfigEditor,
+  resetConfig,
+  configPath,
+  setConfig,
+  config,
+} from "./lib/config.js";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import { createTelegramBot } from "./lib/notifications/telegram-bot.js";
@@ -18,8 +24,9 @@ const argv = yargs(hideBin(process.argv))
     config: {
       type: "string",
       demandOption: true,
-      describe: "Configuration options to override, in json format. You can use (a subset of) config.defaults.json as template.",
-    }
+      describe:
+        "Configuration options to override, in json format. You can use (a subset of) config.defaults.json as template.",
+    },
   })
   .command("config-reset", "Reset the config to the default values.")
   .command("config-path", "Show the path of the config file.")
