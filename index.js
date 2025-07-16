@@ -15,6 +15,7 @@ import {
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import { createTelegramBot } from "./lib/notifications/telegram-bot.js";
+import { createMqttConnection } from "./lib/notifications/homeassistant-mqtt.js";
 
 const argv = yargs(hideBin(process.argv))
   .usage("Usage: toogoodtogo-watcher <command>")
@@ -73,6 +74,8 @@ switch (argv._[0]) {
     }
 
     await createTelegramBot();
+    createMqttConnection();
+
     pollFavoriteBusinesses$(hasListeners$()).subscribe({
       next: (businesses) => notifyIfChanged(businesses),
       error: console.error,
