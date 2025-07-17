@@ -19,6 +19,7 @@
     },
     "telegram": {
       "enabled": false,
+      "disableJoin": false,
       "botToken": "See README",
       "chats": []
     },
