@@ -1,6 +1,6 @@
 {
   "name": "toogoodtogo-watcher",
-  "version": "4.8.1",
+  "version": "4.8.2",
   "description": "Node.js cli tool for monitoring your favorite TooGoodToGo businesses.",
   "type": "module",
   "exports": "./index.js",
