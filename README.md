@@ -20,7 +20,7 @@ See [below for Docker usage](#docker).
 2. `npm install -g toogoodtogo-watcher`
 3. `toogoodtogo-watcher config`. Optionally enable / disable certain notifications. See [Configuring the interactive Telegram bot](#configuring-the-interactive-telegram-bot) for instructions on
    setting up the Telegram notifications.
-4. `toogoodtogo-watcher login --email mail@example.com`. Click the link in the login email (on PC, not on phone).
+4. `toogoodtogo-watcher login --email mail@example.com`. You will receive an email with a numeric code. Enter this code when prompted in the console to complete the login.
 5. `toogoodtogo-watcher watch`
 
 ## CLI documentation
@@ -87,7 +87,7 @@ Note: the Docker image is a multiarch image. So it will also work on Raspberry P
    into `YOUR_FOLDER/config.json`. See above for instructions on how to configure the application. Make sure that the
    folder has the correct permissions, e.g. run chmod -R o+rwx config/ or you might get access denied errors on the file
    system. The app needs read/write access on the configuration file, e.g. to store token received in it.
-2. Run the following command to login, using the configured email address. Example: a user `john` who stored the config
+2. Run the following command to login, using the configured email address. You will receive an email with a numeric code that you need to enter when prompted. Example: a user `john` who stored the config
    in `~/toogoodtogo-watcher/config.json`:
 
 ```
@@ -125,6 +125,7 @@ docker run \
    to `toogoodtogo-watcher/config.json`. See above for instructions on how to configure the application.
 3. Use the command as explained under 'Docker run' above to login using the configured email address.
 4. Create a file `docker-compose.yaml`
+
    ```yaml
    version: "3"
    services:
